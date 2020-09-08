@@ -48,4 +48,22 @@ Feature(/^Amazon Test$/, async () => {
       expect(ec.visibilityOf(await page.signInButton())).toBeFalsy();
     });
   });
+  Scenario(/^Search for Item$/, async () => {
+    // place holder if needing before like from beforeAll/beforeEach from normal protractor
+    Before(() => {
+    });
+    // go to amazon
+    Given(/^ Words Here$/, async () => {
+      await page.navigateToAmazon();
+    });
+
+    When(/^Enter Item Name$/, () => {
+      await ma.visibleThenClick(page.signInButton());
+    });
+    
+    Then(/^expect Item to be displayedl$/, async () => {
+      // if logged in should no longer be present
+      expect(ec.visibilityOf(await page.signInButton())).toBeFalsy();
+    });
+  });
 })

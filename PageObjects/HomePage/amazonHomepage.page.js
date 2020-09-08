@@ -25,4 +25,12 @@ export class AmazonHome {
     return element(by.id("signInSubmit"));
   }
 
+  continueButton() {
+    return element(by.css(`[@id='continue']`));
+  }
+
+  searchBar() {
+    return element(by.id("twotabsearchtextbox"));
+  }
+
 }
