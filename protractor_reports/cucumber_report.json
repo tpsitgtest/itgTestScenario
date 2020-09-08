@@ -28,7 +28,43 @@
             "arguments": [],
             "keyword": "When ",
             "line": 4,
-            "name": "Click I click sign in",
+            "name": "I click sign in button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "enter Email address",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I click next",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I enter Password",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Press next",
             "result": {
               "status": "undefined"
             }
@@ -36,8 +72,8 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 5,
-            "name": "enter Email address",
+            "line": 9,
+            "name": "User is signed into amazon",
             "result": {
               "status": "undefined"
             }
@@ -56,18 +92,18 @@
         ]
       },
       {
-        "id": "amazon-test;",
+        "id": "amazon-test;add-item-into-basket",
         "keyword": "Scenario",
-        "line": 14,
-        "name": "",
+        "line": 11,
+        "name": "Add Item into basket",
         "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
-            "name": "I open amazon in a browser",
+            "line": 12,
+            "name": "Search for Item",
             "result": {
               "status": "undefined"
             }
@@ -75,8 +111,8 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 9,
-            "name": "I add two numbers 4 and 2",
+            "line": 13,
+            "name": "Enter Item Name",
             "result": {
               "status": "undefined"
             }
@@ -84,8 +120,8 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 10,
-            "name": "result should be correct 6",
+            "line": 14,
+            "name": "expect Item to be displayed",
             "result": {
               "status": "undefined"
             }
@@ -104,18 +140,18 @@
         ]
       },
       {
-        "id": "amazon-test;",
+        "id": "amazon-test;ensure-currect-value-is-in-basket",
         "keyword": "Scenario",
-        "line": 15,
-        "name": "",
+        "line": 16,
+        "name": "Ensure Currect value is in basket",
         "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
-            "name": "I open amazon in a browser",
+            "line": 17,
+            "name": "Select Item",
             "result": {
               "status": "undefined"
             }
@@ -123,8 +159,8 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 9,
-            "name": "I add two numbers 6 and 3",
+            "line": 18,
+            "name": "",
             "result": {
               "status": "undefined"
             }
@@ -132,8 +168,44 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 10,
-            "name": "result should be correct 9",
+            "line": 19,
+            "name": "Click Add to basket",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "Click drop to set amount to add to basket",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "select 2 in dropdown menu",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "Click add to basket",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "result should be 3",
             "result": {
               "status": "undefined"
             }

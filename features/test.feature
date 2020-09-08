@@ -2,17 +2,18 @@ Feature: Amazon Test
     Scenario: Login into Amazon
         Given I open amazon in a browser
         When I click sign in button
-        Then enter Email address
-        Then click next
-        Then enter Password
-        Then Press next
+        And enter Email address
+        And I click next
+        And I enter Password
+        And Press next
+        Then User is signed into amazon
 
     Scenario: Add Item into basket
         Given Search for Item
         When Enter Item Name
         Then expect Item to be displayed
 
-    Scenario: Scenario name
+    Scenario: Ensure Currect value is in basket
         Given Select Item
         When 
         Then Click Add to basket
@@ -20,15 +21,3 @@ Feature: Amazon Test
         Then select 2 in dropdown menu
         Then Click add to basket
         Then result should be 3
-
-    
-
-    # Scenario Outline:
-    #     Given I open amazon in a browser
-    #     When I add two numbers <num1> and <num2>
-    #     Then result should be correct <result>
-
-    #     Examples:
-    #         | num1 | num2 | result |
-    #         | 4    | 2    | 6      |
-    #         | 6    | 3    | 9      |

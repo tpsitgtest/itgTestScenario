@@ -1,29 +1,11 @@
 import { browser } from "protractor";
 
-class HomePage {
-  constructor() {
-    this.header = new Header();
+export class AmazonHome {
+  navigateToAmazon() {
+    return browser.get(browser.basengUrl);
   }
 
-  visitAmazon() {
-    return browser.get('https://www.amazon.co.uk/');
-  }
-
-  signInButton() {
-    return element(by.css(`[@id='nav-signin-tooltip']`))
-  }
-
-  getUserAvatar() {
-    return cy.get(`[data-testid=UserAvatar]`);
-  }
-
-  goToSignIn() {
-    const link = this.header.getSignInLink();
-    link.click();
-
-    const signIn = new SignInPage();
-    return signIn;
+  getAmazonTitleText() {
+    return element(by.cssContaintsText(`[id="nav-logo"]`,'Amazon.co.uk'));
   }
 }
-
-export default HomePage();
