@@ -17,4 +17,12 @@ export class AmazonHome {
     return element(by.id("ap_email"));
   }
 
+  passwordInputfield() {
+    return element(by.id("ap_password"));
+  }
+
+  submitButton() {
+    return element(by.id("signInSubmit"));
+  }
+
 }

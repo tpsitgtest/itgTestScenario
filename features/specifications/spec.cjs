@@ -9,6 +9,7 @@ var page = new AmazonHome();
 var ma = new MouseAction();
 var ka =new KeyAction();
 var ec = ExpectedConditions;
+// should never store creditials in plain text
 var emailAddress = 'tps-itg-test@dontrackme.com';
 var amazonPassword = 'fl8eTklsskuE';
 
@@ -21,29 +22,30 @@ Feature(/^Amazon Test$/, async () => {
     Given(/^I open amazon in a browser$/, async () => {
       await page.navigateToAmazon();
     });
-    // click sign in
+
     When(/^I click sign in button$/, () => {
       await ma.visibleThenClick(page.signInButton());
     });
 
     And(/^enter Email address$/, () => {
-      await ka.sendKey(emailAddress);
+      await ka.sendKey(page.emailInputfield, emailAddress);
     });
 
     And(/^I click continue$/, () => {
-      await ma.visibleThenClick(page.signInButton());
+      await ma.visibleThenClick(page.continueButton());
     });
     
     And(/^And I enter Password$/, () => {
-      await ma.visibleThenClick(page.signInButton());
+      await ka.sendKey(amazonPassword);
     });
 
-    And(/^Press next$/, () => {
-      await ma.visibleThenClick(page.signInButton());
+    And(/^Press Submit$/, () => {
+      await ma.visibleThenClick(page.submitButton());
     });
     
-    Then(/^I should see the title$/, async () => {
-      expect(ec.visibilityOf(await page.getAmazonTitleText())).toBeTruthy();
+    Then(/^I should not see sign in modal$/, async () => {
+      // if logged in should no longer be present
+      expect(ec.visibilityOf(await page.signInButton())).toBeFalsy();
     });
   });
 })

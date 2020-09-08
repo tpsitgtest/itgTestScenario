@@ -5,7 +5,7 @@ Feature: Amazon Test
         And enter Email address
         And I click continue
         And I enter Password
-        And Press continue
+        And Press Submit
         Then User is signed into amazon
 
     Scenario: Add Item into basket

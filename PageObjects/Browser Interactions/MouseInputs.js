@@ -1,4 +1,3 @@
-import { browser } from "protractor";
 import {ExpectedConditions} from 'protractor';
 var ec = ExpectedConditions;
 
