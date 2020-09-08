@@ -53,7 +53,7 @@ Feature(/^Amazon Test$/, async () => {
     // place holder if needing before like from beforeAll/beforeEach from normal protractor
     Before(() => {
     });
-    // go to amazon
+    
     Given(/^ Search for Item$/, async () => {
       await ec.visibilityOf(await page.searchBar()).toBeTruthy();
     });
@@ -63,7 +63,6 @@ Feature(/^Amazon Test$/, async () => {
     });
     
     Then(/^expect Item to be displayedl$/, async () => {
-      // if logged in should no longer be present
       expect(ec.visibilityOf(await page.itemWanted())).toBeTruthy();
     });
   });
@@ -71,7 +70,7 @@ Feature(/^Amazon Test$/, async () => {
     // place holder if needing before like from beforeAll/beforeEach from normal protractor
     Before(() => {
     });
-    // go to amazon
+
     Given(/^ Item is Displayed in results list$/, async () => {
       await ec.visibilityOf(await page.itemWanted().toContain(itemWantedName)).toBeTruthy();
     });
@@ -84,19 +83,20 @@ Feature(/^Amazon Test$/, async () => {
       await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
     });
 
-    
-    
+    and(/^Click drop to set amount to add to basket$/, () => {
+      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+    });
+
+    and(/^select 2 in dropdown menu$/, () => {
+      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+    });
+
+    and(/^Click add to basket$/, () => {
+      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+    });
+
     Then(/^expect Item to be displayedl$/, async () => {
-      // if logged in should no longer be present
       expect(ec.visibilityOf(await page.itemWanted())).toBeTruthy();
     });
   });
-
-        Given Item is Displayed in reulsts list
-        When I click on the
-        Then Click Add to basket
-        Then Click drop to set amount to add to basket
-        Then select 2 in dropdown menu
-        Then Click add to basket
-        Then result should be 3
 })
