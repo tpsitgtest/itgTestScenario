@@ -14,7 +14,7 @@ Feature: Amazon Test
         Then expect Item to be displayed
 
     Scenario: Ensure Currect value is in basket
-        Given Item is Displayed in reulsts list
+        Given Item is Displayed in results list
         When I click on the
         Then Click Add to basket
         Then Click drop to set amount to add to basket
