@@ -3,9 +3,9 @@ Feature: Amazon Test
         Given I open amazon in a browser
         When I click sign in button
         And enter Email address
-        And I click next
+        And I click continue
         And I enter Password
-        And Press next
+        And Press continue
         Then User is signed into amazon
 
     Scenario: Add Item into basket
@@ -14,8 +14,8 @@ Feature: Amazon Test
         Then expect Item to be displayed
 
     Scenario: Ensure Currect value is in basket
-        Given Select Item
-        When 
+        Given Item is Displayed in reulsts list
+        When I click on the
         Then Click Add to basket
         Then Click drop to set amount to add to basket
         Then select 2 in dropdown menu
