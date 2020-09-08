@@ -12,6 +12,7 @@ var ec = ExpectedConditions;
 // should never store creditials in plain text
 var emailAddress = 'tps-itg-test@dontrackme.com';
 var amazonPassword = 'fl8eTklsskuE';
+var itemWantedName = 'Toblerone Tone Dark Chocolate, 0.36 kg';
 
 Feature(/^Amazon Test$/, async () => {
   Scenario(/^Login into Amazon$/, async () => {
@@ -53,17 +54,17 @@ Feature(/^Amazon Test$/, async () => {
     Before(() => {
     });
     // go to amazon
-    Given(/^ Words Here$/, async () => {
-      await page.navigateToAmazon();
+    Given(/^ Search for Item$/, async () => {
+      await ec.visibilityOf(await page.searchBar()).toBeTruthy();
     });
 
     When(/^Enter Item Name$/, () => {
-      await ma.visibleThenClick(page.signInButton());
+      await ka.sendKey(page.searchBar, itemWantedName)
     });
     
     Then(/^expect Item to be displayedl$/, async () => {
       // if logged in should no longer be present
-      expect(ec.visibilityOf(await page.signInButton())).toBeFalsy();
+      expect(ec.visibilityOf(await page.itemWanted())).toBeTruthy();
     });
   });
 })

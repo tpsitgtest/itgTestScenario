@@ -1,4 +1,4 @@
-import { browser } from "protractor";
+import { browser } from 'protractor';
 
 export class AmazonHome {
   navigateToAmazon() {
@@ -6,7 +6,7 @@ export class AmazonHome {
   }
 
   getAmazonTitleText() {
-    return element(by.cssContaintsText(`[id="nav-logo"]`,'Amazon.co.uk'));
+    return element(by.cssContaintsText(`[id='nav-logo']`,'Amazon.co.uk'));
   }
 
   signInButton() {
@@ -14,15 +14,15 @@ export class AmazonHome {
   }
 
   emailInputfield() {
-    return element(by.id("ap_email"));
+    return element(by.id('ap_email'));
   }
 
   passwordInputfield() {
-    return element(by.id("ap_password"));
+    return element(by.id('ap_password'));
   }
 
   submitButton() {
-    return element(by.id("signInSubmit"));
+    return element(by.id('signInSubmit'));
   }
 
   continueButton() {
@@ -30,7 +30,10 @@ export class AmazonHome {
   }
 
   searchBar() {
-    return element(by.id("twotabsearchtextbox"));
+    return element(by.id('twotabsearchtextbox'));
   }
 
+  itemWanted() {
+      return element(by.class('a-section a-spacing-none a-spacing-top-small'));
+    }
 }
