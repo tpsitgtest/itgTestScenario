@@ -49,23 +49,25 @@ Feature(/^Amazon Test$/, async () => {
       expect(ec.visibilityOf(await page.signInButton())).toBeFalsy();
     });
   });
+
   Scenario(/^Search for Item$/, async () => {
     // place holder if needing before like from beforeAll/beforeEach from normal protractor
     Before(() => {
     });
-    
+
     Given(/^ Search for Item$/, async () => {
       await ec.visibilityOf(await page.searchBar()).toBeTruthy();
     });
 
     When(/^Enter Item Name$/, () => {
-      await ka.sendKey(page.searchBar, itemWantedName)
+      await ka.sendKey(page.searchBar, itemWantedName);
     });
     
     Then(/^expect Item to be displayedl$/, async () => {
       expect(ec.visibilityOf(await page.itemWanted())).toBeTruthy();
     });
   });
+
   Scenario(/^Ensure Currect value is in basket$/, async () => {
     // place holder if needing before like from beforeAll/beforeEach from normal protractor
     Before(() => {
@@ -76,27 +78,28 @@ Feature(/^Amazon Test$/, async () => {
     });
 
     When(/^I click on the item i can interact with basket$/, () => {
-      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName));
     });
-
+    // to do get price and store as function then use later
     and(/^Click Add to basket$/, () => {
-      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+      await ma.visibleThenClick(page.addToBasket());
     });
 
     and(/^Click drop to set amount to add to basket$/, () => {
-      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+      await ma.visibleThenClick(page.amountDropDown());
     });
-
+    /* ToDo need to get price function to add item added to basket + (drop down amount * price)
     and(/^select 2 in dropdown menu$/, () => {
-      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName));
     });
 
     and(/^Click add to basket$/, () => {
-      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName))
+      await ma.visibleThenClick(page.itemWanted().toContain(itemWantedName));
     });
 
     Then(/^expect Item to be displayedl$/, async () => {
       expect(ec.visibilityOf(await page.itemWanted())).toBeTruthy();
     });
+    */
   });
 })

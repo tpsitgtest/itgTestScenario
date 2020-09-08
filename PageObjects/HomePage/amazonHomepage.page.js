@@ -1,4 +1,4 @@
-import { browser } from 'protractor';
+import { browser, element } from 'protractor';
 
 export class AmazonHome {
   navigateToAmazon() {
@@ -34,6 +34,14 @@ export class AmazonHome {
   }
 
   itemWanted() {
-      return element(by.class('a-section a-spacing-none a-spacing-top-small'));
-    }
+    return element(by.class('a-section a-spacing-none a-spacing-top-small'));
+  }
+
+  addToBasket() {
+    return element(by.id("add-to-cart-button"));
+  }
+
+  amountDropDown() {
+    return element(by.id('quantity'));
+  }
 }
