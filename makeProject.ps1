@@ -1,20 +1,20 @@
-npm install -g protrator
+CD "C:\Users\Tom\Downloads\test batch"
+npm install -g protractor
 npm install protractor --save-dev
 webdriver-manager update
 type nul > conf.cjs
 mkdir features
 cd features
 type nul > test.feature
-cd ..
 mkdir specifications
 cd specifications
 type nul > spec.cjs
+cd ..
 cd ..
 mkdir reports
 cd reports
 mkdir json
 cd..
-cd ..
 mkdir CucumberReportDirectory
 mkdir protractor_reports
 npm install cucumber
